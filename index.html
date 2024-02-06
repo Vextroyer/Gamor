@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="image/favicon.ico">
+    <title>Gamor</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <style>
+        .main-section-container{
+            display: grid;
+            grid-template-columns: auto auto auto;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header-grid-container">
+
+        <div></div><!--Empty div to achieve good positioning of heading-->
+
+        <h1 style="text-align: center;" class="header-grid-item">Gamor</h1>
+
+        <nav class="header-grid-item">
+            <ul class="header-link-list-grid-container">
+                <li><a href="login.html">Log in</a></li>
+                <li><a href="register.html" id="create-account-button">Create account</a></li>
+            </ul>
+        </nav>
+
+        <button class="button-change-theme">
+            <img src="image/sun.svg" alt="Change theme">
+        </button>
+
+    </header>
+
+    <main>
+        
+        <div class="main-section-container">
+            <div style="background-color: red;">a</div>
+            <div style="background-color: blue;">b</div>
+            <div style="background-color: yellow;">c</div>
+        </div>
+
+        <section style="margin: 5%;">
+            <h2>Trending Categories</h2>
+            <ol class="categories-grid-container">
+                <li class="categories-grid-item">Action Games</li>
+                <li class="categories-grid-item">Sports Games</li>
+                <li class="categories-grid-item">Adventure Games</li>
+                <li class="categories-grid-item">Arcade Games</li>
+                <li class="categories-grid-item">Fantasy Games</li>
+                <li class="categories-grid-item">Strategy Games</li>
+                <li class="categories-grid-item">Shooter Games</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,72 @@
+/* Themes */
+
+.light-theme {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.dark-theme {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+/* */
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+ul{
+    list-style: none;
+}
+
+/* Header Style*/
+.header-grid-container{
+    display: grid;
+    grid-template-columns: 30% 40% 20% 10%;
+}
+.header-grid-item{
+    margin: 16px;
+}
+.header-link-list-grid-container{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+.header-link-list-grid-container > li > a{
+    text-decoration: none;
+    color: black;
+}
+.button-change-theme{
+    background-color: inherit;
+    border-style: none;
+}
+#create-account-button{
+    background-color: black;
+    padding: 15px;
+    border-style: solid;
+    border-radius: 15px;
+    border-width: 2px;
+    border-color: gray;
+    color: white;
+}
+/*   */
+
+/* Categories section style*/
+.categories-grid-container{
+    display: grid;
+    gap: 10px;
+    grid-template-columns: auto auto auto auto;
+    margin: 0px;
+    padding: 0px;
+}
+.categories-grid-item{
+    background-color: rgb(241, 241, 241);
+    text-align: center;
+    border-radius: 20px;
+    padding: 80px;
+}
+.categories-grid-container li{
+    list-style-type: decimal;
+    list-style-position: inside;
+}
+/*  */

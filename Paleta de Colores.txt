@@ -1,0 +1,13 @@
+Light
+
+black #000000
+white #ffffff
+orange #ffa500
+purple #800080
+
+Dark
+
+Aqui invertido
+
+Esta buena la paleta
+
