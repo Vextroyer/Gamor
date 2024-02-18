@@ -11,7 +11,7 @@
 
 <body>
     <main>
-        <form action="HelloWorld.html" target="_blank">
+        <form action="HelloWorld.html" onsubmit="return ValidateLogin()" target="_blank">
             <label for="fusername">User</label>
             <input type="text" name="fusername" id="fusername" required>
             <label for="fpassword">Password</label>
@@ -19,6 +19,32 @@
             <input type="submit" value="Log in" style="display:block;margin: 10px auto;">
         </form>
     </main>
+
+    <script>
+        function ValidateLogin(){
+            //Retrieve user input, non empty due to `required` attribute
+            let pass = document.getElementById("fpassword").value;
+            let user = document.getElementById("fusername").value;
+            
+            //Hard-coded usernames and passwords
+            let loginData = new Map([
+                ["admin","admin"],
+                ["sudo","sudo"],
+                ["super","base"]
+            ])
+
+            if(loginData.has(user) && loginData.get(user) === pass){
+                return true;
+            }
+            
+            //Check if user is registered 
+            let registerData = new Map(JSON.parse(sessionStorage.getItem("registerData")));
+            if(registerData.has(user) && registerData.get(user) === pass)return true;
+
+            alert("Incorrect username or password");
+            return false;
+        }
+    </script>
 </body>
 
 </html>
