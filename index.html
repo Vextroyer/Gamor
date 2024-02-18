@@ -7,20 +7,6 @@
     <title>Gamor</title>
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="styles/themes.css">
-    <style>
-        .main-section-container{
-            display: grid;
-            grid-template-columns: 30% 40% 30%;
-            width: 80%;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: auto;
-            margin-top: 5vh;
-        }
-        .main-section-item{
-            height: 70vh;
-        }
-    </style>
 </head>
 <body class="light-theme" onload="RefreshSearch()">
 
@@ -53,10 +39,10 @@
     <main>
         
         <div class="main-section-container light-secondary-background">
-            <div class="main-section-item" style="border-top-left-radius: 20px;border-bottom-left-radius: 20px;background-image: url(images/insert_image_here.svg);background-repeat: no-repeat;">
+            <div class="main-section-item" style="background-image: url(images/insert_image_here.svg);background-repeat: no-repeat;">
                 <div style="height: 70%;"></div>
                 <ul style="text-align: center;display: grid;grid-template-columns: auto auto;margin-left: 0px;padding-left: 0px;">
-                    <li><a href="register.html">Create account</a></li>
+                    <li><a class="light-themed-register-button" href="register.html">Create account</a></li>
                     <li><a href="login.html">Sign in</a></li>
                 </ul>
             </div>
@@ -65,7 +51,7 @@
                 <p style="color: white;text-align: center;">Warhammer 40k new session</p>
             </div>
             
-            <div class="main-section-item" style="border-top-right-radius: 20px;border-bottom-right-radius: 20px;">
+            <div class="main-section-item">
                 <ol>
                     <li>
                         <header><h2>Choose Platform</h2></header>
@@ -79,21 +65,22 @@
                         </form>
                     </li>
                     <li>
-                        <header><h2>Searching Game</h2></header>
-
-                        <select>
-                            <optgroup>
-                                <option value="cod" name="game-selector">COD Warzone</option>
-                                <option value="wah" name="game-selector">Warhammer 40k</option>
-                                <option value="wow" name="game-selector">World of Warcraft</option>
-                            </optgroup>
-                        </select>
-                        
-                        <ol id="search-result-list">
-
-                        </ol>
-
-                        <input type="submit" value="Search now" onclick="RefreshSearch()">
+                        <header><h2 style="margin-bottom: 2%;">Searching Game</h2></header>
+                        <div class="light-primary-color" style="width: fit-content;padding: 5%;border-radius: 20px;">
+                            <select>
+                                <optgroup>
+                                    <option value="cod" name="game-selector">COD Warzone</option>
+                                    <option value="wah" name="game-selector">Warhammer 40k</option>
+                                    <option value="wow" name="game-selector">World of Warcraft</option>
+                                </optgroup>
+                            </select>
+                            
+                            <ol style="margin:2%;" id="search-result-list">
+    
+                            </ol>
+    
+                            <input st type="submit" value="Search now" onclick="RefreshSearch()">
+                        </div>
                     </li>
                 </ol>
             </div>

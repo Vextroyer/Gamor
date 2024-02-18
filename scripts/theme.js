@@ -11,6 +11,9 @@ function ToggleTheme(){
         newClass = "dark-secondary-background";
         //change theme change icon from sun to moon
         document.getElementById("theme-change-icon").setAttribute("src","images/moon.png");
+        
+        document.getElementsByClassName("light-themed-register-button")[0].className = "dark-themed-register-button";
+        document.getElementsByClassName("light-primary-color")[0].className = "dark-primary-color";
     }
     else{
         body.className = "light-theme";
@@ -18,6 +21,9 @@ function ToggleTheme(){
         newClass = "light-secondary-background";
         //change theme change icon from moon to sun
         document.getElementById("theme-change-icon").setAttribute("src","images/sun.svg");
+
+        document.getElementsByClassName("dark-themed-register-button")[0].className = "light-themed-register-button";
+        document.getElementsByClassName("dark-primary-color")[0].className = "light-primary-color";
     }
 
     //Replace class of all elements of oldClass with newClass

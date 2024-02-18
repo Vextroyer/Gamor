@@ -13,6 +13,16 @@
     background-color:  #ffffff;
 }
 
+.light-themed-register-button{
+    background-color: #f6f6f6;
+    padding: 10%;
+    border-radius: 20px;
+}
+
+.light-primary-color{
+    background-color: #f6f6f6;
+}
+
 .dark-theme {
     background-color: #151515;
     color: #ffffff;
@@ -24,4 +34,14 @@
 
 .dark-secondary-background{
     background-color: #303030;
+}
+
+.dark-themed-register-button{
+    background-color: #151515;
+    padding: 10%;
+    border-radius: 20px;
+}
+
+.dark-primary-color{
+    background-color: #151515;
 }
