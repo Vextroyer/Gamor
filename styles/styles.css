@@ -1,12 +1,12 @@
 /* Themes */
 
 .light-theme {
-    background-color: #ffffff;
+    background-color: #f0f0f0;
     color: #000000;
 }
 
 .dark-theme {
-    background-color: #000000;
+    background-color: #151515;
     color: #ffffff;
 }
 

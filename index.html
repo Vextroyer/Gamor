@@ -21,7 +21,7 @@
         }
     </style>
 </head>
-<body onload="RefreshSearch()">
+<body class="light-theme" onload="RefreshSearch()">
 
     <header class="header-grid-container">
 
@@ -43,7 +43,7 @@
             </ul>
         </nav>
 
-        <button class="button-change-theme">
+        <button class="button-change-theme" onclick="ToggleTheme()">
             <img src="image/sun.svg" alt="Change theme">
         </button>
 
@@ -169,6 +169,15 @@
                 if(option.selected){
                     return option.value;
                 }
+            }
+        }
+        function ToggleTheme(){
+            let body = document.body;
+            if(body.className == "light-theme"){
+                body.className = "dark-theme";
+            }
+            else{
+                body.className = "light-theme";
             }
         }
     </script>

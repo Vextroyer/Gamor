@@ -1,13 +1,6 @@
-Light
+                            Light           Dark
+Primary background          #f0f0f0         #151515
 
-black #000000
-white #ffffff
-orange #ffa500
-purple #800080
+Secondary background        #ffffff         #303030
 
-Dark
-
-Aqui invertido
-
-Esta buena la paleta
-
+Text color                  #000000         #ffffff
