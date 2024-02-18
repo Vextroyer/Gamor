@@ -9,11 +9,19 @@
     <style>
         .main-section-container{
             display: grid;
-            grid-template-columns: auto auto auto;
+            grid-template-columns: 30% 40% 30%;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: auto;
+            margin-top: 5vh;
+        }
+        .main-section-item{
+            height: 70vh;
         }
     </style>
 </head>
-<body>
+<body onload="RefreshSearch()">
 
     <header class="header-grid-container">
 
@@ -44,9 +52,50 @@
     <main>
         
         <div class="main-section-container">
-            <div style="background-color: red;">a</div>
-            <div style="background-color: blue;">b</div>
-            <div style="background-color: yellow;">c</div>
+            <div class="main-section-item" style="background-color: rgb(241, 241, 241);border-top-left-radius: 20px;border-bottom-left-radius: 20px;background-image: url(image/insert_image_here.svg);background-repeat: no-repeat;">
+                <div style="position: relative;height: 70%;"></div>
+                <ul style="text-align: center;display: grid;grid-template-columns: auto auto;margin-left: 0px;padding-left: 0px;">
+                    <li><a style="text-decoration: none;color: black;background-color: rgb(235, 227, 250);padding: 5%;border-radius: 20px;" href="register.html">Create account</a></li>
+                    <li><a style="text-decoration: none;color: black;" href="login.html">Sign in</a></li>
+                </ul>
+            </div>
+            
+            <div class="main-section-item" style="background-image: url(image/purpletau.webp);background-size: cover;">
+                <p style="color: white;text-align: center;">Warhammer 40k new session</p>
+            </div>
+            
+            <div class="main-section-item" style="background-color: rgb(241, 241, 241);border-top-right-radius: 20px;border-bottom-right-radius: 20px;">
+                <ol>
+                    <li>
+                        <header><h2>Choose Platform</h2></header>
+                        <form style="background-color: #e4e2e2; width: fit-content;padding:5%">
+                            <input type="radio" id="party-radio-button" value="party" name="platform-selector" checked="checked">
+                            <label for="party-radio-button">Party</label>
+                            <input type="radio" id="match-radio-button" value="match" name="platform-selector">
+                            <label for="match-radio-button">Match</label>
+                            <input type="radio" id="streams-radio-button" value="streams" name="platform-selector">
+                            <label for="streams-radio-button">Streams</label>
+                        </form>
+                    </li>
+                    <li>
+                        <header><h2>Searching Game</h2></header>
+
+                        <select>
+                            <optgroup>
+                                <option value="cod" name="game-selector">COD Warzone</option>
+                                <option value="wah" name="game-selector">Warhammer 40k</option>
+                                <option value="wow" name="game-selector">World of Warcraft</option>
+                            </optgroup>
+                        </select>
+                        
+                        <ol id="search-result-list">
+
+                        </ol>
+
+                        <input type="submit" value="Search now" onclick="RefreshSearch()">
+                    </li>
+                </ol>
+            </div>
         </div>
 
         <section style="margin: 5%;">
@@ -59,8 +108,69 @@
                 <li class="categories-grid-item">Fantasy Games</li>
                 <li class="categories-grid-item">Strategy Games</li>
                 <li class="categories-grid-item">Shooter Games</li>
-            </ul>
+            </ol>
         </section>
     </main>
+    
+    <script>
+        function RefreshSearch(){
+            //Define (platform,game) -> Collection  relations
+            // Platforms : party, match , stream
+            // Game : cod, wah, wow
+            let relation = new Map([
+                [ "partycod",["Out1","Out2","Out3"] ],
+                [ "partywah",["Out4","Out5","Out6","Out7"] ],
+                [ "partywow", ["Out8","Out9"] ],
+
+                [ "matchcod",["Out10","Out11"] ],
+                [ "matchwah",["Out12","Out13","Out14","Out15","Out16"] ],
+                [ "matchwow",["Out17"] ],
+
+                [ "streamscod",["Out18","Out19"] ],
+                [ "streamswah",["Out20","Out21","Out22"] ],
+                [ "streamswow",["Out23"] ]
+            ])
+
+            //Retrieve the results associated with the search
+            let searchData = relation.get(GetSelectedPlatform()+GetSelectedGame());
+            
+            //Retrieve the HTML element that will display the results
+            let searchResultElement = document.getElementById("search-result-list");
+            // Remove its child elements
+            //searchResultElement.replaceChildren();//doesnt work on my Edge
+            while(searchResultElement.firstChild){
+                searchResultElement.removeChild(searchResultElement.lastChild);
+            }
+            
+            //Assign it new child with the fresh content. 
+            for(let i =0;i<searchData.length;++i){
+                let li = document.createElement("li");
+                li.appendChild(document.createTextNode(searchData[i]));
+                searchResultElement.appendChild(li);
+            }
+        }
+        function GetSelectedPlatform(){
+            //Retrieve the platform radio buttons
+            let platforms = document.getElementsByName("platform-selector");
+
+            //Return the value of the selected radio button
+            for (radioButton of platforms){
+                if(radioButton.checked){
+                    return radioButton.value;
+                }
+            }
+        }
+        function GetSelectedGame(){
+            //Retrieve the game options
+            let games = document.getElementsByName("game-selector");
+
+            //Return the value of the selected option
+            for (option of games){
+                if(option.selected){
+                    return option.value;
+                }
+            }
+        }
+    </script>
 </body>
 </html>
