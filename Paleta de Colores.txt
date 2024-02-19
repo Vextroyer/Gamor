@@ -1,5 +1,5 @@
                             Light           Dark
-Primary background          #f0f0f0         #151515
+Primary background          #f6f6f6         #151515
 
 Secondary background        #ffffff         #303030
 

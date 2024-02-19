@@ -1,0 +1,19 @@
+/* Themes */
+
+.light-theme {
+    background-color: #f6f6f6;
+    color: #000000;
+}
+
+.light-secondary-background{
+    background-color:  #ffffff;
+}
+
+.dark-theme {
+    background-color: #151515;
+    color: #ffffff;
+}
+
+.dark-secondary-background{
+    background-color: #303030;
+}
