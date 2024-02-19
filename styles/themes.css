@@ -5,6 +5,10 @@
     color: #000000;
 }
 
+.light-theme a{
+    color: black;
+}
+
 .light-secondary-background{
     background-color:  #ffffff;
 }
@@ -12,6 +16,10 @@
 .dark-theme {
     background-color: #151515;
     color: #ffffff;
+}
+
+.dark-theme a{
+    color: white;
 }
 
 .dark-secondary-background{
